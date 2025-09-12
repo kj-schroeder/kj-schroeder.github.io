@@ -1,0 +1,65 @@
+@use "variablen" as v;
+
+/*--------------------
+   STICKY SETTINGS
+--------------------*/
+$base-top: 10px;          // Abstand vom Container-Top
+$sticky-height: 42rem;    // Höhe der Sticky-Elemente
+$max-sticky: 4;
+$sticky-top: 10vh;        // Abstand vom oberen Rand beim Sticky
+$sticky-top-md: 7vh;      // Abstand vom oberen Rand beim Sticky
+$sticky-top-sm: 3vh;      // Abstand vom oberen Rand beim Sticky
+
+/*--------------------
+   STICKY CONTAINER
+--------------------*/
+.stickyContainer {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 120vh; // Platz zum Scrollen
+}
+
+/*--------------------
+   STICKY ELEMENTS
+--------------------*/
+.sticky {
+  position: sticky;
+  top: $sticky-top-sm;
+  background: v.$bgcolor;
+  border-top: 1px solid v.$border-color;
+  padding: 0.5rem 0;
+  height: $sticky-height;
+  z-index: 10;
+
+  h3 {
+    line-height: 2.75rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------
+   GESTAFFELTE STICKY ELEMENTS
+--------------------*/
+@for $i from 1 through $max-sticky {
+  .sticky:nth-of-type(#{$i}) {
+    top: calc($sticky-top-sm + $i * 3.5rem);
+    height: calc($sticky-height - $i * 3.5rem);
+  }
+}
+
+/*--------------------
+   SCROLLFADE ANIMATION
+--------------------*/
+.scrollFade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.scrollFade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

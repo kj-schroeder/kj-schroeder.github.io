@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Farbvariablen als SCSS
+   ========================================================================== */
+
+$font-color: #373e40;
+$font-color-hover: rgba(55, 62, 64, 0.75);
+$header-color: #df9304;
+$border-color: #de9f2c;
+$bgcolor: #fff;
+
+$primary-color: #dbd4c1;
+$secondary-color: #e7e6e6;
+$accent-color: #de9f2c;
+
+$black: #373e40;
+$black-30: rgba(55, 62, 64, 0.3);
+$black-50: rgba(55, 62, 64, 0.5);
+$black-75: rgba(55, 62, 64, 0.75);
+$black-85: rgba(55, 62, 64, 0.85);
+
+$white: #fff;
+$white-50: rgba(255, 255, 255, 0.5);
+$white-75: rgba(255, 255, 255, 0.75);
+$white-85: rgba(255, 255, 255, 0.85);
+
+
+/* ==========================================================================
+   CSS-Variablen (für JS oder Fallbacks)
+   ========================================================================== */
+:root {
+  --spacer: 1.5rem;
+  --headline-size: 1.25rem;
+}
+
+
+/* ==========================================================================
+   Banner Größen (für Breakpoints)
+   ========================================================================== */
+$banner-sizes: (
+  md: (
+    // >48rem
+    height: 700px,
+    bg-height: 1300px,
+    bg-width: 1300px,
+    bg-top: -600px,
+    bg-left: -300px
+  ),
+  lg: (
+    // >62rem
+    height: 1050px,
+    bg-height: 1800px,
+    bg-width: 1800px,
+    bg-top: -750px,
+    bg-left: -500px
+  ),
+  xl: (
+    // >75rem
+    height: 1000px,
+    bg-height: 2200px,
+    bg-width: 2200px,
+    bg-top: -1200px,
+    bg-left: -600px
+  )
+);

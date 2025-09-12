@@ -1,0 +1,23 @@
+/*--------------------
+   FLEX
+---------------------*/
+
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .flexItem.main {
+    position: relative;
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+
+  .flexItem.aside {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }

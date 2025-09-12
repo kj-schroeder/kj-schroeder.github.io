@@ -1,11 +1,464 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KJ Schroeder - Portfolio</title>
+    <link href="assets/css/style.css" rel="stylesheet" media="screen">
+    <script src="assets/js/main.js" defer></script>
 </head>
+
 <body>
-    <h1>KJ Schroeder - Portfolio</h1>
+    <div id="wrapper">
+        <header>
+            <div class="menu-collapsed">
+                <div class="menu-bg">
+                </div>
+                <div class="menu-bg">
+                    <div class="bar"></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">Über mich</a></li>
+                        <li><a href="#tools">Tools & Technologien</a></li>
+                        <li><a href="#projects">Projekte</a></li>
+                        <div><span>Kontaktiere mich auf </span>
+                            <button class="btn tech-item">
+                                <a href="https://linkedin.com/in/katharina-schroeder-webdevelopment" target="_blank">
+                                    <span>Linked</span>
+                                    <svg viewBox="0 0 128 128">
+                                        <path
+                                            d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </button>
+                        </div>
+                    </ul>
+
+                </nav>
+            </div>
+        </header>
+
+        <div id="banner">
+            <div id="bannerBackground" class="scrollFade"></div>
+            <div class="textContainer">
+                <h1 class="scrollFade">Katharina J. Schroeder</h1>
+                <h2 class="scrollFade">Webentwicklung | JavaScript | PHP</h2>
+            </div>
+        </div>
+
+        <main>
+
+            <section>
+
+                <article id="about">
+                    <div class="iconHeader scrollFade">
+                        <i class="fa-solid fa-heart animatedIcon heart-beat"></i>
+                        <h2>Über mich</h2>
+                    </div>
+
+                    <div class="flexContainer">
+                        <div class="flexItem main">
+                            <p class="scrollFade">Als Quereinsteigerin verbinde ich technisches Know-how mit einem
+                                ganzheitlichen Blick auf digitale Projekte. Mein Fokus liegt auf objektorientierter
+                                Programmierung, sauberen Schnittstellen und nachhaltiger Codequalität nach
+                                SOLID-Prinzipien. Mit
+                                modernen Technologien wie Vue.js und Laravel entwickle ich benutzerfreundliche,
+                                performante
+                                Webanwendungen, die überzeugen.</p>
+                        </div>
+                        <div class="flexItem aside">
+                            <div id="quickfacts" class="flexContainer">
+                                <div class="scrollFade">
+                                    <div><i class="fa-solid fa-hourglass-half"></i></div>
+                                    <span>Erfahrung:</span>
+                                    <span>1 Jahr</span>
+                                </div>
+                                <div class="scrollFade">
+                                    <div><i class="fa-solid fa-gears"></i></div>
+                                    <span>Tech-Stack:</span>
+                                    <div class="iconWrapper projectStack scrollFade">
+                                        <div class="tech-item">
+                                            <img src="assets/images/JavaScript.png" alt="JavaScript Icon"
+                                                class="tech-icon">
+                                        </div>
+                                        <div class="tech-item">
+                                            <img src="assets/images/PHP.png" alt="PHP Icon" class="tech-icon">
+                                        </div>
+                                        <div class="tech-item">
+                                            <img src="assets/images/Laravel.png" alt="Laravel Icon" class="tech-icon">
+                                        </div>
+                                        <div class="tech-item">
+                                            <img src="assets/images/Vue.js.png" alt="Vue.js Icon" class="tech-icon">
+                                        </div>
+                                        <div class="tech-item">
+                                            <img src="assets/images/Bootstrap.png" alt="Bootstrap Icon"
+                                                class="tech-icon">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scrollFade">
+                                    <div><i class="fa-solid fa-link"></i></div>
+                                    <span>Contact:</span>
+                                    <button class="btn tech-item">
+                                        <a href="https://linkedin.com/in/katharina-schroeder-webdevelopment"
+                                            target="_blank">
+                                            <span>Linked</span>
+                                            <svg viewBox="0 0 128 128" class="tech-icon">
+                                                <path
+                                                    d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z">
+                                                </path>
+                                            </svg>
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                </article>
+
+                <article id="tools">
+                    <div class="iconHeader scrollFade">
+                        <i class="fa-solid fa-gear animatedIcon gear"></i>
+                        <h2>Tools & Technologien</h2>
+                    </div>
+
+                    <!-- Frontend Development -->
+                    <div class="stickyContainer">
+                        <div class="sticky">
+                            <div class="flexContainer">
+                                <div class="flexItem main">
+                                    <h3 class="scrollFade">Frontend Development</h3>
+                                    <p class="scrollFade">Ich entwickle moderne, responsive Interfaces mit Fokus auf
+                                        klare Strukturen
+                                        und eine
+                                        überzeugende
+                                        User Experience. Neben HTML, CSS/SCSS und
+                                        JavaScript setze
+                                        ich auch Vue.js ein,
+                                        um interaktive Anwendungen effizient und skalierbar umzusetzen.</p>
+                                    <div class="spacer"></div>
+                                    <div class="iconWrapper">
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/HTML5.png" alt="HTML5 Icon" class="tech-icon">
+                                            <span>HTML5</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/CSS3.png" alt="CSS Icon" class="tech-icon">
+                                            <span>CSS3</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Sass.png" alt="Sass Icon" class="tech-icon">
+                                            <span>SCSS</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/JavaScript.png" alt="JavaScript Icon"
+                                                class="tech-icon">
+                                            <span>JavaScript</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Vue.js.png" alt="Vue.js Icon" class="tech-icon">
+                                            <span>Vue.js</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Bootstrap.png" alt="Bootstrap Icon"
+                                                class="tech-icon">
+                                            <span>Bootstrap</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Backend Development -->
+                        <div class="sticky">
+
+                            <div class="flexContainer">
+                                <div class="flexItem main">
+                                    <h3 class="scrollFade">Backend Development</h3>
+                                    <p class="scrollFade">Mein Schwerpunkt liegt auf objektorientierter Programmierung,
+                                        sauberen
+                                        Schnittstellen
+                                        und nachhaltiger
+                                        Codequalität nach SOLID-Prinzipien. Mit PHP und Laravel realisiere ich
+                                        robuste
+                                        Backends, während erste
+                                        Projekte mit Node.js/Express meine Flexibilität im modernen
+                                        JavaScript-Umfeld
+                                        unterstreichen.</p>
+                                    <div class="spacer"></div>
+
+                                    <div class="iconWrapper">
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/PHP.png" alt="PHP Icon" class="tech-icon">
+                                            <span>PHP</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Laravel.png" alt="Laravel Icon" class="tech-icon">
+                                            <span>Laravel</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Node.js.png" alt="Node.js Icon" class="tech-icon">
+                                            <span>Node.js</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Express.png" alt="Express Icon" class="tech-icon">
+                                            <span>Express</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/MySQL.png" alt="MySQL Icon" class="tech-icon">
+                                            <span>MySQL</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/MongoDB.png" alt="MongoDB Icon" class="tech-icon">
+                                            <span>MongoDB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fullstack & Webkonzepte -->
+                        <div class="sticky">
+
+                            <div class="flexContainer">
+                                <div class="flexItem main">
+                                    <h3 class="scrollFade">Fullstack & Webkonzepte</h3>
+                                    <p class="scrollFade">Ich denke Anwendungen ganzheitlich: von der API-Anbindung über
+                                        asynchrone
+                                        Kommunikation bis hin zu
+                                        datenbankgestützten Workflows. Durch die Verbindung von Frontend- und
+                                        Backend-Know-how entwickle ich
+                                        Lösungen, die technisch fundiert und langfristig wartbar sind.</p>
+                                    <div class="spacer"></div>
+
+                                    <div class="iconWrapper">
+                                        <div class="tech-item btn scrollFade">
+                                            <i class="fa-solid fa-share-nodes tech-icon"></i>
+                                            <span>REST-APIs</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <i class="fa-solid fa-arrows-rotate tech-icon"></i>
+                                            <span>AJAX</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <i class="fa-solid fa-diagram-project tech-icon"></i>
+                                            <span>MVC</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <i class="fa-solid fa-cubes tech-icon"></i>
+                                            <span>OOP</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <i class="fa-solid fa-scale-balanced tech-icon"></i>
+                                            <span>SOLID</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tools & Workflow -->
+                        <div class="sticky">
+
+                            <div class="flexContainer">
+                                <div class="flexItem main">
+                                    <h3 class="scrollFade">Tools & Workflow</h3>
+                                    <p class="scrollFade">Effizienz und Struktur sind mir wichtig. Mit Git, Composer,
+                                        npm und
+                                        gängigen
+                                        CLI-Tools organisiere ich
+                                        Projekte professionell und versionssicher. VS Code und XAMPP nutze ich
+                                        täglich als
+                                        flexible
+                                        Entwicklungsumgebungen.</p>
+                                    <div class="spacer"></div>
+
+                                    <div class="iconWrapper">
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Git.png" alt="Git Icon" class="tech-icon">
+                                            <span>Git</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/Node.js.png" alt="npm Icon" class="tech-icon">
+                                            <span>Node.js</span>
+                                        </div>
+                                        <div class="tech-item btn scrollFade">
+                                            <img src="assets/images/VSCode.png" alt="VS Code Icon" class="tech-icon">
+                                            <span>VS Code</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="projects">
+                    <div id="gearsAnimation" class="iconHeader scrollFade">
+                        <div id="animationContainer">
+                            <i class="fa-solid fa-gear animatedIcon gears"></i>
+                            <i class="fa-solid fa-gear animatedIcon gears"></i>
+                        </div>
+                        <h2>Projekte</h2>
+                    </div>
+                    <div class="spacer"></div>
+
+                    <h3 class="scrollFade">KlangQuest</h3>
+
+                    <div class="flexContainer">
+
+                        <div class="flexItem aside scrollFade">
+                            <video id="klangquestDemo" autoplay loop muted>
+                                <source src="assets/videos/klangquest_demo_mobileframe.mp4" type="video/mp4">
+                                <source src="assets/videos/klangquest_demo_mobileframe.webm" type="video/webm">
+                            </video>
+                        </div>
+
+                        <div class="flexItem main">
+
+                            <div class="iconWrapper projectStack scrollFade">
+                                <div class="tech-item">
+                                    <img src="assets/images/HTML5.png" alt="HTML5 Icon" class="tech-icon">
+                                </div>
+                                <div class="tech-item">
+                                    <img src="assets/images/Sass.png" alt="Sass Icon" class="tech-icon">
+                                </div>
+                                <div class="tech-item">
+                                    <img src="assets/images/JavaScript.png" alt="JavaScript Icon" class="tech-icon">
+                                </div>
+                                <div class="tech-item">
+                                    <img src="assets/images/Vue.js.png" alt="Vue.js Icon" class="tech-icon">
+                                </div>
+                                <div class="tech-item">
+                                    <img src="assets/images/Bootstrap.png" alt="Bootstrap Icon" class="tech-icon">
+                                </div>
+                            </div>
+
+                            <p class="scrollFade"><strong>KlangQuest</strong> ist eine mobile Lern-App, die Nutzern
+                                hilft, ihre
+                                Musiktheorie-Fähigkeiten zu trainieren. Die App generiert zufällige Akkord-Challenges,
+                                bei denen Nutzer Töne identifizieren und Akkorde korrekt zusammensetzen müssen. Feedback
+                                und Auswertung erfolgen direkt nach der Eingabe.</p>
+                            <p class="scrollFade">Die App ist modular aufgebaut und erweiterbar: Zukünftige Features wie
+                                mehrere
+                                Schwierigkeitslevel, weitere Challenge-Arten, Login-System, Statistik-Tracking und
+                                Multiplayer-Funktionalität mit einem Laravel-Backend sind geplant. Eine Online-Variante
+                                mit API-Endpunkten und Express-Server befindet sich aktuell in der Umsetzung.</p>
+                            <div class="spacer-l"></div>
+                            <button class="btn tech-item projectLink scrollFade">
+                                <a href="https://github.com/kj-schroeder/klangquest" target="_blank">
+                                    <svg viewBox="0 0 128 128" class="tech-icon">
+                                        <g fill="#181616">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z">
+                                            </path>
+                                            <path
+                                                d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                    <span>Zum Projekt</span>
+                                </a>
+                            </button>
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+
+
+            </section>
+
+        </main>
+
+        <footer>
+
+            <nav id="footer-menu">
+
+                <ul>
+                    <li id="impressumLink">Impressum</li>
+                    <li><a href="#top"><i class="fa-solid fa-circle-up"></i></a></li>
+                </ul>
+
+            </nav>
+
+            <div class="impressum-collapsed">
+                <div class="impressum-bg">
+                </div>
+            </div>
+
+            <nav id="socialmedia-menu">
+                <ul>
+                    <li><a href="https://github.com/kj-schroeder" target="_blank">
+                            <img src="assets/images/GitHub.png" alt="Logo GitHub"></i></a></li>
+                    <li><a href="https://linkedin.com/in/katharina-schroeder-webdevelopment" target="_blank"><img
+                                src="assets/images/linkedin.png" alt="Logo LinkedIn"></i></a></li>
+                </ul>
+            </nav>
+
+            <!-- IMPRESSUM MODAL -->
+            <div class="impressum-modal" id="impressumModal">
+                <div class="impressum-content">
+                    <section id="impressum">
+                        <h2>Impressum</h2>
+                        <p><strong>Name:</strong> Katharina J. Schröder</p>
+                        <p><strong>Anschrift:</strong><br>
+                            Wolfgang-Heinze-Str. 37<br>
+                            04277 Leipzig<br>
+                            Deutschland
+                        </p>
+                        <p><strong>Kontakt:</strong><br>
+                            E-Mail: <a href="mailto:k.j.schroeder@posteo.de">k.j.schroeder@posteo.de</a><br>
+                        </p>
+                        <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+                            Katharina J. Schröder, Wolfgang-Heinze-Str. 77, 04277 Leipzig
+                        </p>
+                        <p><strong>Haftungshinweis:</strong> Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich
+                            keine
+                            Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind
+                            ausschließlich
+                            deren Betreiber verantwortlich.</p>
+                        <p><strong>Quelle:</strong> Erstellt auf Basis der Empfehlungen des Deutschen Anwaltvereins und
+                            des
+                            Telemediengesetzes (TMG).</p>
+                    </section>
+
+                    <div class="spacer"></div>
+
+                    <section id="credits">
+                        <h2>Credits & Lizenzen</h2>
+                        <ul>
+                            <li>
+                                <strong>Icons:</strong> Diese Website verwendet
+                                <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a>
+                                sowie <a href="https://devicon.dev/" target="_blank" rel="noopener">Devicon</a>.
+                                Alle Produktnamen, Logos und Marken sind Eigentum der jeweiligen Inhaber.
+                                Die Verwendung der Symbole erfolgt ausschließlich zur Identifikation und stellt keine
+                                Verbindung oder Empfehlung durch die Rechteinhaber dar.
+                            </li>
+                            <li>
+                                <strong>Schriftarten:</strong> Google Font
+                                <a href="https://fonts.google.com/specimen/Roboto" target="_blank"
+                                    rel="noopener">Roboto</a>,
+                                lokal eingebunden.
+                            </li>
+                            <li>
+                                <strong>Open-Source-Komponenten:</strong> Verwendete Bibliotheken und Frameworks
+                                unterliegen ihren jeweiligen Open-Source-Lizenzen (z. B. MIT).
+                                Die Lizenztexte sind den Projekten beigelegt und bleiben erhalten.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="close-btn" id="impressumClose"><i class="fa-solid fa-xmark"></i></div>
+
+            </div>
+
+        </footer>
+
+    </div>
 </body>
+
 </html>

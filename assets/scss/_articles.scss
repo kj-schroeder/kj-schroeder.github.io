@@ -1,0 +1,98 @@
+@use "variablen" as v;
+
+/*--------------------
+   ARTICLES
+--------------------*/
+
+/* ==========================================================================
+   ABOUT SECTION
+========================================================================== */
+#about {
+  /* Flex Container */
+  .flexContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Aside Items */
+  div.flexItem.aside {
+    margin: 0.625rem 0;
+  }
+
+  /* Quickfacts */
+  #quickfacts {
+    flex-direction: column;
+    justify-content: flex-start;
+
+    > div {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+      align-content: center;
+      align-items: center;
+      margin: 0.325rem 0;
+
+      /* Icon container */
+      > div {
+        width: 1.75rem;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+
+        i {
+          font-size: 1.25rem;
+          color: v.$font-color; // falls Icons eine Farbe brauchen
+        }
+      }
+
+      /* Label */
+      > span:first-of-type {
+        width: 7rem;
+        letter-spacing: 2px;
+        color: v.$font-color;
+      }
+
+      /* Project stack */
+      span ~ .projectStack {
+        justify-content: space-between;
+        width: 8.25rem;
+        gap: 0.25rem;
+
+        .tech-item {
+          margin-right: 0;
+          color: v.$font-color;
+        }
+
+        .tech-icon {
+          width: 20px;
+          height: 20px;
+          color: v.$font-color;
+        }
+      }
+
+      /* Buttons */
+      button.btn.tech-item {
+        padding: 0.25rem 0.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   TOOLS SECTION
+========================================================================== */
+#tools {
+  .sticky .flexContainer {
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   PROJECTS SECTION
+========================================================================== */
+#projects {
+  .flexItem.main {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,1326 @@
+@charset "UTF-8";
+/* ==========================================================================
+   MASTERDATEI: style.scss
+   Struktur:
+   1.  Imports
+   2.  Mixins
+   3.  Media Queries
+       3.1 Medium > 768px / 48rem
+       3.2 Large  > 992px / 62rem
+       3.3 X-Large > 1200px / 75rem
+       3.4 Print
+   ========================================================================== */
+/* ==========================================================================
+   1. IMPORTS
+   ========================================================================== */
+/* ==========================================================================
+   SCHRIFTEN
+   ==========================================================================
+   - Fontawesome (CDN / CSS)
+   - Roboto (Local)
+   ========================================================================== */
+/* -------------------
+   Fontawesome
+---------------------- */
+@import "./all.min.css";
+/* ==========================================================================
+   Farbvariablen als SCSS
+   ========================================================================== */
+/* ==========================================================================
+   CSS-Variablen (für JS oder Fallbacks)
+   ========================================================================== */
+:root {
+  --spacer: 1.5rem;
+  --headline-size: 1.25rem;
+}
+
+/* ==========================================================================
+   Banner Größen (für Breakpoints)
+   ========================================================================== */
+.fa-brands,
+.fa-solid {
+  font-size: 1.25rem;
+  color: var(--font-color);
+}
+
+/* -------------------
+   Roboto
+---------------------- */
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("../fonts/roboto/Roboto-Regular.woff") format("woff"), url("../fonts/roboto/Roboto-Regular.ttf") format("truetype"), url("../fonts/roboto/Roboto-Regular.eot") format("eot");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("../fonts/roboto/Roboto-Bold.woff") format("woff"), url("../fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Italic.woff2") format("woff2"), url("../fonts/roboto/Roboto-Italic.woff") format("woff"), url("../fonts/roboto/Roboto-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-BoldItalic.woff2") format("woff2"), url("../fonts/roboto/Roboto-BoldItalic.woff") format("woff"), url("../fonts/roboto/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Black.woff2") format("woff2"), url("../fonts/roboto/Roboto-Black.woff") format("woff"), url("../fonts/roboto/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-BlackItalic.woff2") format("woff2"), url("../fonts/roboto/Roboto-BlackItalic.woff") format("woff"), url("../fonts/roboto/Roboto-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Light.woff2") format("woff2"), url("../fonts/roboto/Roboto-Light.woff") format("woff"), url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-LightItalic.woff2") format("woff2"), url("../fonts/roboto/Roboto-LightItalic.woff") format("woff"), url("../fonts/roboto/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("../fonts/roboto/Roboto-Medium.woff") format("woff"), url("../fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-MediumItalic.woff2") format("woff2"), url("../fonts/roboto/Roboto-MediumItalic.woff") format("woff"), url("../fonts/roboto/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-Thin.woff2") format("woff2"), url("../fonts/roboto/Roboto-Thin.woff") format("woff"), url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/roboto/Roboto-ThinItalic.woff2") format("woff2"), url("../fonts/roboto/Roboto-ThinItalic.woff") format("woff"), url("../fonts/roboto/Roboto-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+/* ==========================================================================
+   MASTERDATEI: style.scss
+   Struktur:
+   1.  Imports
+   2.  Mixins
+   3.  Media Queries
+       3.1 Medium > 768px / 48rem
+       3.2 Large  > 992px / 62rem
+       3.3 X-Large > 1200px / 75rem
+       3.4 Print
+   ========================================================================== */
+/* ==========================================================================
+   1. IMPORTS
+   ========================================================================== */
+/* ==========================================================================
+   BASISFORMATIERUNG
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-moz-selection {
+  background-color: #dbd4c1;
+  font-size: 2rem;
+}
+
+::selection {
+  background-color: #dbd4c1;
+  font-size: 2rem;
+}
+
+#wrapper {
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  color: #373e40;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  word-spacing: calc(var(--spacer) / 20);
+  letter-spacing: 0.025rem;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+#logo {
+  width: 3.75rem;
+  height: auto;
+  vertical-align: middle;
+}
+
+a,
+#impressumLink {
+  color: #373e40;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus,
+#impressumLink:hover,
+#impressumLink:focus {
+  color: rgba(55, 62, 64, 0.5);
+  cursor: pointer;
+}
+
+p {
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  margin: 0.625rem 0;
+  line-height: 1.5rem;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+ol,
+ul,
+figure,
+blockquote {
+  margin: 0 0 1rem 1.875rem;
+}
+
+div {
+  margin: 0 0 1rem 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  margin: 0 0 1rem 0;
+}
+
+h1 {
+  font-size: calc(var(--headline-size) * 1.75);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+h2 {
+  font-size: calc(var(--headline-size) * 1.125);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #373e40;
+}
+
+h3 {
+  font-size: calc(var(--headline-size) * 1);
+  color: #df9304;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0.625rem 1.5rem;
+  width: 100vw;
+}
+
+header {
+  height: 5.5rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  background-color: #de9f2c;
+  padding: 0.625rem;
+  border-top: 1px solid #de9f2c;
+}
+
+/* ==========================================================================
+   BANNER
+   ========================================================================== */
+#banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+#banner #bannerBackground {
+  position: absolute;
+  top: -300px;
+  left: -400px;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background-color: #de9f2c;
+  z-index: 1;
+}
+#banner .textContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.625rem 0.9375rem;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+article {
+  width: 100%;
+  flex-grow: 1;
+  margin: 3rem 0;
+}
+
+aside {
+  flex-grow: 1;
+}
+
+.spacer {
+  height: calc(var(--spacer) * 1.5);
+  margin: 0;
+}
+
+.spacer-l {
+  height: calc(var(--spacer) * 3);
+  margin: 0;
+}
+
+.clearfix::after,
+section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+.b-a, .bar:after, .bar:before, .bar {
+  transition: all 0.25s;
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 4px;
+  width: 30px;
+  border-radius: 15px;
+  background-color: #373e40;
+}
+
+.menu-collapsed {
+  transition: all 0.25s;
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  height: 36px;
+  width: 36px;
+  z-index: 1;
+  cursor: pointer;
+}
+.menu-collapsed ul {
+  transition: all 0s;
+  position: fixed;
+  right: -9000px;
+}
+
+.bar {
+  position: fixed;
+  right: 32px;
+  top: 38px;
+}
+.bar:before {
+  top: -8px;
+}
+.bar:after {
+  top: 8px;
+}
+
+.b-a-expanded, .menu-expanded .bar:after, .menu-expanded .bar:before {
+  transition: all 0.25s;
+  top: 0;
+}
+
+.menu-bg {
+  width: calc(var(--spacer) * 9);
+  height: calc(var(--spacer) * 9);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 3;
+}
+
+.menu-bg:nth-of-type(1) {
+  background-color: rgba(255, 255, 255, 0.5);
+  top: calc(-1 * var(--spacer) * 6 / 2);
+  right: calc(-1 * var(--spacer) * 9 / 2);
+}
+
+.menu-bg:nth-of-type(2) {
+  background-color: rgba(255, 255, 255, 0.75);
+  top: calc(-1 * var(--spacer) * 9 / 2);
+  right: calc(-1 * var(--spacer) * 6 / 2);
+}
+
+.menu-expanded {
+  transition: all 0.25s;
+  text-align: center;
+  line-height: 60px;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  top: 0;
+  right: 0;
+  background-color: rgba(55, 62, 64, 0.85);
+}
+.menu-expanded ul {
+  transition: all 0s;
+  position: relative;
+  right: 0;
+  z-index: 2;
+}
+.menu-expanded a {
+  transition: all 0.15s;
+  text-decoration: none;
+  font-size: 1.75em;
+  padding: 5px;
+  color: #fff;
+  display: block;
+}
+.menu-expanded a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.15s;
+  letter-spacing: 2px;
+  color: #373e40;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.menu-expanded nav {
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: start;
+}
+.menu-expanded nav div {
+  display: flex;
+  line-height: normal;
+  align-items: center;
+  margin-top: 10vh;
+}
+.menu-expanded nav div span {
+  font-size: 1.25rem;
+  color: #fff;
+}
+.menu-expanded nav div button {
+  margin-left: 0.5rem;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+}
+.menu-expanded nav div button a {
+  gap: 0.25rem;
+}
+.menu-expanded nav div button svg {
+  width: 24px;
+  height: 24px;
+}
+.menu-expanded nav div button svg path {
+  fill: #fff;
+}
+.menu-expanded nav div button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.menu-expanded nav div button:hover span {
+  color: #373e40;
+}
+.menu-expanded nav div button:hover svg path {
+  fill: #373e40;
+}
+.menu-expanded nav div a:hover {
+  background-color: transparent;
+}
+.menu-expanded .bar {
+  background-color: transparent;
+  transition: all 0.25s;
+}
+.menu-expanded .bar:before {
+  transform: rotate(45deg);
+}
+.menu-expanded .bar:after {
+  transform: rotate(-45deg);
+}
+
+nav ul {
+  padding: 0.5rem 1rem;
+  height: auto;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+footer nav ul li {
+  color: #373e40;
+}
+footer nav ul li:hover {
+  color: rgba(55, 62, 64, 0.75);
+}
+footer nav ul li a i.fa-solid {
+  color: #373e40;
+}
+footer nav ul li a i.fa-solid:hover {
+  color: rgba(55, 62, 64, 0.75);
+}
+
+#footer-menu,
+#socialmedia-menu {
+  margin: 0.25rem 0 0 0;
+}
+
+#footer-menu ul {
+  margin: 0;
+}
+
+#footer-menu ul li,
+#socialmedia-menu ul li {
+  display: inline-block;
+}
+#footer-menu ul li img,
+#socialmedia-menu ul li img {
+  width: 24px;
+  height: 24px;
+}
+
+/* ==========================================================================
+   IMPRESSUM MODAL
+   ========================================================================== */
+.impressum-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 62, 64, 0.85);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-in-out;
+}
+.impressum-modal .impressum-content {
+  max-width: 800px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  color: #373e40;
+  font-size: 1rem;
+}
+.impressum-modal .impressum-content section {
+  display: block;
+}
+.impressum-modal .impressum-content h2 {
+  margin: 0 0 1.5rem;
+}
+.impressum-modal .impressum-content a {
+  color: #373e40;
+  text-decoration: underline;
+}
+.impressum-modal .impressum-content a:hover {
+  color: rgba(55, 62, 64, 0.75);
+}
+.impressum-modal .close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.impressum-modal .close-btn i.fa-xmark {
+  color: #373e40;
+  font-size: 2rem;
+}
+.impressum-modal .close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* aktiviert */
+.impressum-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*--------------------
+   FLEX
+---------------------*/
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.flexItem.main {
+  position: relative;
+  flex-basis: 100%;
+  margin-right: 0;
+}
+
+.flexItem.aside {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   MASTERDATEI: style.scss
+   Struktur:
+   1.  Imports
+   2.  Mixins
+   3.  Media Queries
+       3.1 Medium > 768px / 48rem
+       3.2 Large  > 992px / 62rem
+       3.3 X-Large > 1200px / 75rem
+       3.4 Print
+   ========================================================================== */
+/* ==========================================================================
+   1. IMPORTS
+   ========================================================================== */
+/*--------------------
+   STICKY SETTINGS
+--------------------*/
+/*--------------------
+   STICKY CONTAINER
+--------------------*/
+.stickyContainer {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 120vh;
+}
+
+/*--------------------
+   STICKY ELEMENTS
+--------------------*/
+.sticky {
+  position: sticky;
+  top: 3vh;
+  background: #fff;
+  border-top: 1px solid #de9f2c;
+  padding: 0.5rem 0;
+  height: 42rem;
+  z-index: 10;
+}
+.sticky h3 {
+  line-height: 2.75rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*--------------------
+   GESTAFFELTE STICKY ELEMENTS
+--------------------*/
+.sticky:nth-of-type(1) {
+  top: calc(3vh + 3.5rem);
+  height: 38.5rem;
+}
+
+.sticky:nth-of-type(2) {
+  top: calc(3vh + 7rem);
+  height: 35rem;
+}
+
+.sticky:nth-of-type(3) {
+  top: calc(3vh + 10.5rem);
+  height: 31.5rem;
+}
+
+.sticky:nth-of-type(4) {
+  top: calc(3vh + 14rem);
+  height: 28rem;
+}
+
+/*--------------------
+   SCROLLFADE ANIMATION
+--------------------*/
+.scrollFade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scrollFade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MASTERDATEI: style.scss
+   Struktur:
+   1.  Imports
+   2.  Mixins
+   3.  Media Queries
+       3.1 Medium > 768px / 48rem
+       3.2 Large  > 992px / 62rem
+       3.3 X-Large > 1200px / 75rem
+       3.4 Print
+   ========================================================================== */
+/* ==========================================================================
+   1. IMPORTS
+   ========================================================================== */
+/*--------------------
+   ICONS CONTAINER
+--------------------*/
+.iconWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/*--------------------
+   TECH ITEMS
+--------------------*/
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #e7e6e6;
+  margin-right: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.tech-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/*--------------------
+   BUTTONS
+--------------------*/
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(55, 62, 64, 0.5);
+  color: #fff;
+  border-radius: 0.25rem;
+  letter-spacing: 2px;
+  border: none;
+}
+.btn svg {
+  width: 20px;
+  height: 20px;
+}
+.btn svg path {
+  fill: #fff;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+  transition: all 0.15s;
+  color: rgba(55, 62, 64, 0.85);
+}
+.btn:hover span {
+  color: #373e40;
+}
+.btn:hover svg path {
+  fill: #373e40;
+}
+.btn a {
+  font-style: normal;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+.btn a:hover, .btn a:focus {
+  color: rgba(55, 62, 64, 0.85);
+}
+
+/*--------------------
+   PROJECT STACK
+--------------------*/
+.projectStack {
+  margin: 2rem 0 0.25rem;
+  flex-wrap: nowrap;
+}
+.projectStack .tech-item {
+  margin-right: 0.75rem;
+  margin-bottom: 0;
+}
+.projectStack .tech-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.projectLink {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  margin-right: 0.25rem;
+}
+
+/*--------------------
+   ICON HEADER
+--------------------*/
+.iconHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+.iconHeader .animatedIcon {
+  display: inline-block;
+  font-size: calc(var(--headline-size) * 1.25);
+}
+.iconHeader h2 {
+  margin-bottom: 0;
+}
+
+/*--------------------
+   ANIMATIONEN
+--------------------*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateHour {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateMinute {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.heart-beat {
+  display: inline-block;
+  animation: heartbeat 1.3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.2);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+.gear {
+  animation: spin 5s linear infinite;
+}
+
+#gearsAnimation {
+  height: 1.5rem;
+}
+#gearsAnimation #animationContainer {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 1.5rem;
+  margin: 0;
+}
+#gearsAnimation #animationContainer .gears {
+  position: absolute;
+  transform-origin: center center;
+}
+#gearsAnimation #animationContainer .gears:nth-of-type(1) {
+  animation: spin 5s linear infinite;
+  font-size: calc(var(--headline-size) * 0.615);
+  top: 0;
+  left: 0;
+  color: #373e40;
+}
+#gearsAnimation #animationContainer .gears:nth-of-type(2) {
+  animation: spin 5s linear infinite reverse;
+  font-size: calc(var(--headline-size) * 0.75);
+  bottom: 0;
+  right: 0;
+  color: #373e40;
+}
+
+/*--------------------
+   MEDIEN
+--------------------*/
+#klangquestDemo {
+  width: 10em;
+}
+
+/* ==========================================================================
+   MASTERDATEI: style.scss
+   Struktur:
+   1.  Imports
+   2.  Mixins
+   3.  Media Queries
+       3.1 Medium > 768px / 48rem
+       3.2 Large  > 992px / 62rem
+       3.3 X-Large > 1200px / 75rem
+       3.4 Print
+   ========================================================================== */
+/* ==========================================================================
+   1. IMPORTS
+   ========================================================================== */
+/*--------------------
+   ARTICLES
+--------------------*/
+/* ==========================================================================
+   ABOUT SECTION
+========================================================================== */
+#about {
+  /* Flex Container */
+  /* Aside Items */
+  /* Quickfacts */
+}
+#about .flexContainer {
+  flex-direction: row;
+  justify-content: space-between;
+}
+#about div.flexItem.aside {
+  margin: 0.625rem 0;
+}
+#about #quickfacts {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#about #quickfacts > div {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-content: center;
+  align-items: center;
+  margin: 0.325rem 0;
+  /* Icon container */
+  /* Label */
+  /* Project stack */
+  /* Buttons */
+}
+#about #quickfacts > div > div {
+  width: 1.75rem;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+#about #quickfacts > div > div i {
+  font-size: 1.25rem;
+  color: #373e40;
+}
+#about #quickfacts > div > span:first-of-type {
+  width: 7rem;
+  letter-spacing: 2px;
+  color: #373e40;
+}
+#about #quickfacts > div span ~ .projectStack {
+  justify-content: space-between;
+  width: 8.25rem;
+  gap: 0.25rem;
+}
+#about #quickfacts > div span ~ .projectStack .tech-item {
+  margin-right: 0;
+  color: #373e40;
+}
+#about #quickfacts > div span ~ .projectStack .tech-icon {
+  width: 20px;
+  height: 20px;
+  color: #373e40;
+}
+#about #quickfacts > div button.btn.tech-item {
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   TOOLS SECTION
+========================================================================== */
+#tools .sticky .flexContainer {
+  justify-content: flex-start;
+}
+
+/* ==========================================================================
+   PROJECTS SECTION
+========================================================================== */
+#projects .flexItem.main {
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   2. MIXINS
+   ========================================================================== */
+/* ==========================================================================
+   3. MEDIA QUERIES
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   3.1 MEDIUM (Tablet) > 768px oder 48rem
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 48rem) {
+  #banner {
+    height: 700px;
+  }
+  #banner #bannerBackground {
+    height: 1300px;
+    width: 1300px;
+    top: -600px;
+    left: -300px;
+  }
+  /* --- Layout --- */
+  main {
+    padding: 0.625rem 0.9375rem;
+    max-width: 80vw;
+  }
+  article {
+    margin: 5rem 0;
+  }
+  div {
+    margin: 0 0 1.5rem 0;
+  }
+  section {
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
+  label {
+    display: inline-block;
+  }
+  /* --- Banner --- */
+  #banner .textContainer {
+    margin: 0 calc(var(--spacer) * 1.5);
+  }
+  /* --- Headlines --- */
+  h1 {
+    font-size: calc(var(--headline-size) * 2);
+  }
+  h2 {
+    font-size: calc(var(--headline-size) * 1.5);
+    margin: 0 0 3rem 0;
+  }
+  h3 {
+    font-size: calc(var(--headline-size) * 1.25);
+  }
+  /* --- Navigation --- */
+  nav ul {
+    width: 60%;
+  }
+  .menu-bg {
+    width: calc(var(--spacer) * 12);
+    height: calc(var(--spacer) * 12);
+  }
+  .menu-bg:nth-of-type(1) {
+    top: calc(-1 * var(--spacer) * 9 / 2);
+    right: calc(-1 * var(--spacer) * 12 / 2);
+  }
+  .menu-bg:nth-of-type(2) {
+    top: calc(-1 * var(--spacer) * 12 / 2);
+    right: calc(-1 * var(--spacer) * 9 / 2);
+  }
+  .menu-expanded {
+    line-height: 90px;
+  }
+  .menu-expanded a {
+    font-size: 2em;
+  }
+  footer nav {
+    padding: 1rem 3rem;
+  }
+  .impressum-modal .close-btn i.fa-xmark {
+    color: #fff;
+  }
+  /* --- Sticky --- */
+  .sticky {
+    top: 10vh;
+    padding: 1rem;
+    height: 42rem;
+  }
+  .sticky h3 {
+    line-height: 4.5rem;
+  }
+  /* gestaffelte Margins für Responsive */
+  .sticky:nth-of-type(1) {
+    top: calc(7vh + 6rem);
+    height: 36rem;
+  }
+  .sticky:nth-of-type(2) {
+    top: calc(7vh + 12rem);
+    height: 30rem;
+  }
+  .sticky:nth-of-type(3) {
+    top: calc(7vh + 18rem);
+    height: 24rem;
+  }
+  .sticky:nth-of-type(4) {
+    top: calc(7vh + 24rem);
+    height: 18rem;
+  }
+  /* --- Flexbox Layouts --- */
+  .flexContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .flexItem.main {
+    position: relative;
+    flex-basis: 60%;
+  }
+  .sticky .flexContainer {
+    justify-content: flex-start;
+  }
+  .sticky .flexContainer .flexItem.main {
+    flex-basis: 100%;
+    margin-right: 1rem;
+  }
+  .flexItem.aside {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  /* --- Icons --- */
+  .tech-item {
+    margin-right: 2.25rem;
+  }
+  .tech-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .iconHeader {
+    margin-bottom: 3rem;
+    gap: 1rem;
+  }
+  .iconHeader .animatedIcon {
+    font-size: calc(var(--headline-size) * 1.75);
+  }
+  /* --- Gears --- */
+  #gearsAnimation {
+    height: 3rem;
+  }
+  #gearsAnimation #animationContainer {
+    width: 3rem;
+  }
+  #gearsAnimation #animationContainer .gears:nth-of-type(1) {
+    font-size: calc(var(--headline-size) * 1.25);
+  }
+  #gearsAnimation #animationContainer .gears:nth-of-type(2) {
+    font-size: calc(var(--headline-size) * 1.5);
+  }
+  /* --- About --- */
+  #about #quickfacts {
+    font-size: 1.25rem;
+  }
+  #about #quickfacts > div {
+    gap: 0.75rem;
+  }
+  #about #quickfacts > div > div i {
+    font-size: 1.5rem;
+  }
+  #about #quickfacts > div > span:first-of-type {
+    width: 8rem;
+  }
+  #about #quickfacts > div span ~ .projectStack {
+    gap: 0.5rem;
+  }
+  #about #quickfacts > div button.btn.tech-item {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+  }
+}
+/* --------------------------------------------------------------------------
+   3.2 LARGE (Desktop) > 992px oder 62rem
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 62rem) {
+  #banner {
+    height: 1050px;
+  }
+  #banner #bannerBackground {
+    height: 1800px;
+    width: 1800px;
+    top: -750px;
+    left: -500px;
+  }
+  /* --- Layout --- */
+  main {
+    margin: 0 calc(var(--spacer) * 3);
+  }
+  article {
+    margin: 7rem 0;
+  }
+  /* --- Headlines --- */
+  h1 {
+    font-size: calc(var(--headline-size) * 2.5);
+  }
+  h2 {
+    font-size: calc(var(--headline-size) * 1.75);
+  }
+  h3 {
+    font-size: calc(var(--headline-size) * 1.5);
+  }
+  /* --- Navigation --- */
+  nav ul {
+    width: 50%;
+  }
+  /* --- Sticky --- */
+  .sticky:nth-of-type(1) {
+    top: calc(10vh + 6rem);
+    height: 36rem;
+  }
+  .sticky:nth-of-type(2) {
+    top: calc(10vh + 12rem);
+    height: 30rem;
+  }
+  .sticky:nth-of-type(3) {
+    top: calc(10vh + 18rem);
+    height: 24rem;
+  }
+  .sticky:nth-of-type(4) {
+    top: calc(10vh + 24rem);
+    height: 18rem;
+  }
+  /* --- Flexbox Layouts --- */
+  .flexContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .flexItem.main {
+    position: relative;
+    flex-basis: 60%;
+  }
+  .sticky .flexContainer {
+    justify-content: flex-start;
+  }
+  .sticky .flexContainer .flexItem.main {
+    flex-basis: 60%;
+  }
+  .flexItem.aside {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+/* --------------------------------------------------------------------------
+   3.3 X-LARGE (Wide) > 1200px oder 75rem
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 75rem) {
+  #banner {
+    height: 1000px;
+  }
+  #banner #bannerBackground {
+    height: 2200px;
+    width: 2200px;
+    top: -1200px;
+    left: -600px;
+  }
+  /* --- Headlines --- */
+  h1 {
+    font-size: calc(var(--headline-size) * 3);
+  }
+  /* --- Navigation --- */
+  nav ul {
+    width: 40%;
+  }
+}
+/* --------------------------------------------------------------------------
+   3.4 PRINT
+   -------------------------------------------------------------------------- */
+@media print {
+  #wrapper {
+    background-color: #fff;
+  }
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+  header,
+  footer,
+  #wrapper > div {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

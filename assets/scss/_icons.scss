@@ -1,0 +1,194 @@
+@use "variablen" as v;
+
+/*--------------------
+   ICONS CONTAINER
+--------------------*/
+.iconWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/*--------------------
+   TECH ITEMS
+--------------------*/
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: v.$secondary-color;
+  margin-right: 0.75rem;
+  letter-spacing: 2px;
+}
+
+.tech-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/*--------------------
+   BUTTONS
+--------------------*/
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: v.$black-50;
+  color: v.$white;
+  border-radius: 0.25rem;
+  letter-spacing: 2px;
+  border: none;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    path {
+      fill: v.$white;
+    }
+  }
+
+  &:hover {
+    background-color: v.$white-75;
+    transition: all 0.15s;
+    color: v.$black-85;
+
+    span {
+      color: v.$font-color;
+    }
+
+    svg path {
+      fill: v.$font-color;
+    }
+  }
+
+  a {
+    font-style: normal;
+    text-decoration: none;
+    color: v.$white;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+
+    &:hover,
+    &:focus {
+      color: v.$black-85;
+    }
+  }
+}
+
+/*--------------------
+   PROJECT STACK
+--------------------*/
+.projectStack {
+  margin: 2rem 0 0.25rem;
+  flex-wrap: nowrap;
+
+  .tech-item {
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .tech-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.projectLink {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  margin-right: 0.25rem;
+}
+
+/*--------------------
+   ICON HEADER
+--------------------*/
+.iconHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+
+  .animatedIcon {
+    display: inline-block; // transform wirkt nur auf inline-block
+    font-size: calc(var(--headline-size) * 1.25);
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+/*--------------------
+   ANIMATIONEN
+--------------------*/
+// Allgemeine Drehung
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateHour {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMinute {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// Herzschlag
+.heart-beat {
+  display: inline-block;
+  animation: heartbeat 1.3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.2); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.2); }
+  70% { transform: scale(1); }
+}
+
+// Gears
+.gear {
+   animation: spin 5s linear infinite; // 2s für eine volle Umdrehung
+}
+
+#gearsAnimation {
+  height: 1.5rem;
+
+  #animationContainer {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 1.5rem;
+    margin: 0;
+
+    .gears {
+      position: absolute;
+      transform-origin: center center;
+
+      &:nth-of-type(1) {
+        animation: spin 5s linear infinite;
+        font-size: calc(var(--headline-size) * 0.615);
+        top: 0;
+        left: 0;
+        color: v.$font-color;
+      }
+
+      &:nth-of-type(2) {
+        animation: spin 5s linear infinite reverse;
+        font-size: calc(var(--headline-size) * 0.75);
+        bottom: 0;
+        right: 0;
+        color: v.$font-color;
+      }
+    }
+  }
+}
