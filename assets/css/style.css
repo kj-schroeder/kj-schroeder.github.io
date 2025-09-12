@@ -333,7 +333,7 @@ aside {
 }
 
 .spacer {
-  height: calc(var(--spacer) * 1.5);
+  height: calc(var(--spacer) * 0.75);
   margin: 0;
 }
 
@@ -1230,6 +1230,9 @@ footer nav ul li a i.fa-solid:hover {
   }
   article {
     margin: 7rem 0;
+  }
+  .spacer {
+    height: calc(var(--spacer) * 1.5);
   }
   /* --- Headlines --- */
   h1 {
