@@ -517,16 +517,16 @@ footer nav ul {
   gap: 1rem;
 }
 footer nav ul li {
-  color: #373e40;
+  color: rgb(0, 0, 0);
 }
 footer nav ul li:hover {
-  color: rgba(55, 62, 64, 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }
 footer nav ul li a i.fa-solid {
-  color: #373e40;
+  color: rgb(0, 0, 0);
 }
 footer nav ul li a i.fa-solid:hover {
-  color: rgba(55, 62, 64, 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 #footer-menu,

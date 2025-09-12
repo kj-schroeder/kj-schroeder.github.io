@@ -404,17 +404,17 @@ footer nav ul {
   gap: 1rem;
 
   li {
-    color: v.$black;
+    color: rgba(0, 0, 0, 1);
 
     &:hover {
-      color: v.$black-75;
+      color: rgba(0, 0, 0, 0.75);
     }
 
     a i.fa-solid {
-      color: v.$black;
+      color: rgba(0, 0, 0, 1);
 
       &:hover {
-        color: v.$black-75;
+        color: rgba(0, 0, 0, 0.75);
       }
     }
   }
