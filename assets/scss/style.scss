@@ -121,10 +121,41 @@
     a {
       font-size: 2em;
     }
+    nav div {
+      span {
+        font-size: 1.25rem;
+      }
+      button {
+        span {
+          font-size: 1.25rem;
+        }
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
   }
 
   footer nav {
     padding: 1rem 3rem;
+  }
+
+  #footer-menu ul li,
+  #socialmedia-menu ul li {
+    display: inline-block;
+    font-size: 1rem;
+    a > i.fa-solid.fa-circle-up {
+      font-size: 1.5rem;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+
+      &:hover path {
+        fill: rgba(0, 0, 0, 0.75);
+      }
+    }
   }
 
   .impressum-modal .close-btn i.fa-xmark {

@@ -142,7 +142,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 0.9rem;
+  font-size: 1rem;
   background-color: v.$accent-color;
   padding: 0.625rem;
   border-top: 1px solid v.$border-color;
@@ -334,7 +334,7 @@ section::after {
       margin-top: 10vh;
 
       span {
-        font-size: 1.25rem;
+        font-size: 1rem;
         color: v.$white;
       }
 
@@ -345,11 +345,16 @@ section::after {
 
         a {
           gap: 0.25rem;
+          padding: 0;
+        }
+
+        span {
+          font-size: 1rem;
         }
 
         svg {
-          width: 24px;
-          height: 24px;
+          width: 20px;
+          height: 20px;
 
           path {
             fill: v.$white;
@@ -431,11 +436,18 @@ footer nav ul {
 
 #footer-menu ul li,
 #socialmedia-menu ul li {
+  font-size: 0.9rem;
   display: inline-block;
-
-  img {
-    width: 24px;
-    height: 24px;
+  a > i.fa-solid.fa-circle-up {
+    font-size: 1.25rem;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+    
+    &:hover path {
+      fill: rgba(0, 0, 0, 0.75);
+    }
   }
 }
 
